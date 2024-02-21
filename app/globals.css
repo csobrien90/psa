@@ -1,10 +1,16 @@
 /* Imports and Variables */
 :root {
 	/* Gray pallete with yellow accent */
+	--lt-gray: #f5f5f5;
 	--md-gray: #e0e0e0;
 	--dk-gray: #616161;
 	--accent: #ffeb3b;
-	--black: #010101;
+	--black: #;
+
+	/* Text colors */
+	--text: #444;
+	--bright-text: #020202;
+	--true-black: #000;
 
 }
 
@@ -18,18 +24,29 @@
 /* Global Styles */
 body {
 	font-family: sans-serif;
-	font-size: 10px;
-	background-color: var(--black);
-	color: var(--md-gray);
-	padding: 1em;
+	font-size: 6px;
+	background-color: var(--lt-gray);
+	color: var(--text);
+	line-height: 1.5;
+	max-width: 100%;
 }
 
 h1, h2, h3, h4 {
-	color: #fff;
+	color: var(--bright-text);
 }
 
 h1 {
 	font-size: 6em;
+	display: flex;
+	align-items: center;
+}
+
+h1::after {
+	content: url('../public/assets/caution.svg');
+	display: inline-block;
+	margin-inline-start: 10px;
+	width: 64px;
+	line-height: 0;
 }
 
 h2 {
@@ -48,16 +65,51 @@ p {
 	font-size: 2em;
 }
 
-main, article {
+main {
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+	max-width: 1000px;
+	margin: 0 auto;
+	gap: 1em;
+}
+
+article {
 	display: grid;
 	gap: 1em;
 }
 
+article {
+	padding: 1em 0;
+}
+
 a {
 	text-decoration: none;
-	color: #fff;
+	color: var(--bright-text);
+	font-weight: 500;
+	text-underline-offset: 4px;
+}
+
+a[target="_blank"]::after {
+	content: url('/assets/external-link.svg');
+	display: inline-block;
+	width: .8em;
+	margin-inline-start: .2em;
 }
 
 a:hover, a:active, a:focus {
+	color: var(--true-black);
 	text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+	body {
+		font-size: 8px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	body {
+		font-size: 10px;
+	}
 }
