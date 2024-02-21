@@ -31,7 +31,7 @@ export default async function GlyphOfWarding(): Promise<JSX.Element> {
 			<GlyphClient ipData={ipData} sendData={sendData} />
 			<article>
 				<h2>Are you visiting from {ipData.city}, {ipData.region}?</h2>
-				<p>That's not just a random guess. When you navigated to this page, I looked up your IP address - I can get information about your Internet Service Provider, like your carrier ({ipData.carrier.name}) or the exact latitude and longitude of the tower/station from which your service is being provided ({ipData.latitude}, {ipData.longitude}). If the location information above is incorrect, I'm guessing you are using a VPN - way to go! If the location is correct, you may want to consider using a service such as <Link href={NordVPNReferral} target='_blank'>NordVPN</Link></p>
+				<p>That&apos;s not just a random guess. When you navigated to this page, I looked up your IP address - I can get information about your Internet Service Provider, like your carrier ({ipData.carrier.name}) or the exact latitude and longitude of the tower/station from which your service is being provided ({ipData.latitude}, {ipData.longitude}). If the location information above is incorrect, I&apos;m guessing you are using a VPN - way to go! If the location is correct, you may want to consider using a service such as <Link href={NordVPNReferral} target='_blank'>NordVPN</Link></p>
 			</article>
 		</>
 	)

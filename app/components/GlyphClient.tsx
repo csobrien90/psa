@@ -12,7 +12,7 @@ export default function GlyphClient({ ipData, sendData }: { ipData: IpData | IpD
 		return () => {
 			glyph.teardown()
 		}
-	}, [])
+	}, [ipData, sendData])
 
 	return null
 }
